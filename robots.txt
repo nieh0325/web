@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://web.nieh0325.ddns-ip.net/sitemap.xml
+
+# Disallow sensitive directories
+Disallow: /images/profile-original.jpg
+
+# Crawl-delay for polite crawling
+Crawl-delay: 10

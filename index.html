@@ -4,6 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nieh0325的個人網站 - 射出成型專家、CNC加工技術人員，分享個人經歷與技術心得">
+    <meta name="keywords" content="Nieh0325, 射出成型, CNC加工, 個人網站, 履歷, 技術支援">
+    <meta name="author" content="Nieh0325">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nieh0325的個人網站">
+    <meta property="og:description" content="射出成型專家、CNC加工技術人員，分享個人經歷與技術心得">
+    <meta property="og:image" content="https://web.nieh0325.ddns-ip.net/images/profile.jpg">
+    <meta property="og:url" content="https://web.nieh0325.ddns-ip.net/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nieh0325的個人網站">
+    <meta name="twitter:description" content="射出成型專家、CNC加工技術人員，分享個人經歷與技術心得">
+    <meta name="twitter:image" content="https://web.nieh0325.ddns-ip.net/images/profile.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/profile.jpg">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google.com">
+    
     <title>Nieh0325的個人網站</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,7 +56,10 @@
         <section id="home" class="hero">
             <h1>歡迎來到 Nieh0325 的網站</h1>
             <div class="profile-image">
-                <img src="./images/profile.jpg" alt="聶哲政的個人照片" class="avatar">
+                <picture>
+                    <source srcset="./images/profile.webp" type="image/webp">
+                    <img src="./images/profile.jpg" alt="聶哲政的個人照片" class="avatar" width="180" height="180" loading="eager">
+                </picture>
             </div>
             <p>嗨！我是 Nieh0325，歡迎來到我的個人網站。</p>
             <div id="current-date" style="margin-top: 10px; font-weight: 600; color: var(--primary-color);"></div>
@@ -52,44 +82,14 @@
                 </form>
             </div>
 
-            <script>
-                const engines = {
-                    google: { action: "https://www.google.com/search", icon: "https://www.google.com/favicon.ico" },
-                    bing: { action: "https://www.bing.com/search", icon: "https://www.bing.com/favicon.ico" },
-                    yahoo: { action: "https://search.yahoo.com/search", icon: "https://www.yahoo.com/favicon.ico" },
-                    baidu: { action: "https://www.baidu.com/search", icon: "https://www.baidu.com/favicon.ico" },
-                    duckduckgo: { action: "https://duckduckgo.com/", icon: "https://duckduckgo.com/favicon.ico" }
-                };
-
-                function updateSearchEngine() {
-                    const engine = document.getElementById('engine-select').value;
-                    const icon = document.getElementById('search-engine-icon');
-                    icon.src = engines[engine].icon;
-                }
-
-                function handleSearch(event) {
-                    event.preventDefault();
-                    const engine = document.getElementById('engine-select').value;
-                    const query = document.getElementById('search-input').value;
-                    const url = engines[engine].action + "?q=" + encodeURIComponent(query);
-                    window.open(url, '_blank');
-                }
-
-                function displayDate() {
-                    const now = new Date();
-                    const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
-                    document.getElementById('current-date').textContent = now.toLocaleDateString('zh-TW', options);
-                }
-                displayDate();
-            </script>
+            <script src="scripts/main.js" defer></script>
         </section>
 
 
         <section id="about">
             <h2>關於我</h2>
             <p>在這裡分享一些關於我的故事和經歷...
-            <p>我有20多年射出成型工作經歷，其中約10年有包含射拉吹工藝，年輕時從事CNC加工行業也接近4-5年。平常愛玩電腦，看youtube頻道學習新知，測試新程式、AI程式
-            </p>
+            <p>我有20多年射出成型工作經歷，其中約10年有包含射拉吹工藝，年輕時從事CNC加工行業也接近4-5年。平常愛玩電腦，看youtube頻道學習新知，測試新程式、AI程式</p>
         </section>
 
         <section id="projects">
@@ -112,7 +112,6 @@
             <p>Email: <a href="mailto:nieh0325@gmail.com">nieh0325@gmail.com</a></p>
 
             <p><a href="https://halo.nieh0325.us.kg" target="_blank">訪問我的博客</a></p>
-            </div>
         </section>
     </main>
 
